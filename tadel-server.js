@@ -1,19 +1,20 @@
 const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
+require("dotenv").config();
 
 // mailgun additional
-let formData = require("form-data");
-let Mailgun = require("mailgun.js");
-let mailgun = new Mailgun(formData);
+const formData = require("form-data");
+const Mailgun = require("mailgun.js");
+const mailgun = new Mailgun(formData);
+const { MAILGUN_API_KEY } = process.env;
 
 const mg = mailgun.client({
     username: "api",
-    key: process.env.MAILGUN_API_KEY,
+    key: MAILGUN_API_KEY,
 });
 // mailgun additional
 
-require("dotenv").config();
 const { DATABASE_URL } = process.env;
 
 const app = express()
