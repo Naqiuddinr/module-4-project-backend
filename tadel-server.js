@@ -522,8 +522,8 @@ app.get("/", async (req, res) => {
     res.status(200).json({ message: "TADEL API is running" });
 });
 
-const port = 3000
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
-    console.log(`Example app listening on port http://localhost:${port}/`)
+    console.log(`Example app listening on port ${port}`)
 })
