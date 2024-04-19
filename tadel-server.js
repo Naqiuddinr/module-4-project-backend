@@ -318,7 +318,7 @@ app.post("/team/invite", async (req, res) => {
     try {
         mg.messages.create("sandbox75434ee137b34cfead883ab09d46cb86.mailgun.org", {
             from: `<Tadel-Support@tadel.com>`,
-            to: [email],
+            to: ["mnaqiuddin.rsl@gmail.com"],
             subject: "You Have Been Invited to Join Tadel!",
             html: `
           <h4>You have been invited to join Tadel by ${originator}</h4>
@@ -414,7 +414,7 @@ app.post("/tasks", async (req, res) => {
 
         mg.messages.create("sandbox75434ee137b34cfead883ab09d46cb86.mailgun.org", {
             from: `<${originator}>`,
-            to: [assignee],
+            to: ["mnaqiuddin.rsl@gmail.com"],
             subject: title,
             html: `
           <p><strong>Dealine:</strong> ${end_date}</p>
