@@ -2,12 +2,13 @@
   "name": "module-4-project-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "tadel-server.js",
+  "main": "index.js",
   "engines": {
     "node": "20.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node tadel-server.js",
     "start": "node tadel-server.js"
   },
   "author": "",
