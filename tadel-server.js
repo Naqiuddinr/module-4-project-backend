@@ -322,7 +322,7 @@ app.post("/team/invite", async (req, res) => {
             subject: "You Have Been Invited to Join Tadel!",
             html: `
           <h4>You have been invited to join Tadel by ${originator}</h4>
-          <p>Please click on this <a href="google.com">link</a> to sign up and start using Tadel!</p>
+          <p>Please click on this <a href="https://module-4-project-naqiuddinr.vercel.app/login">link</a> to sign up and start using Tadel!</p>
           `,
         });
 
