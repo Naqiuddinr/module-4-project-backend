@@ -1,15 +1,9 @@
 {
     "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "tadel-server.js",
-            "use": "@now/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "tadel-server.js"
+            "source": "/(.*)",
+            "destination": "tadel-server.js"
         }
     ]
 }
