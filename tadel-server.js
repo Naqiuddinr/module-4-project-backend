@@ -217,6 +217,30 @@ app.post("/users", async (req, res) => {
     }
 });
 
+//END POINT FOR FETCH CURRENT USER DATA
+
+app.get("/users/:firebase_uid", async (req, res) => {
+    const client = await pool.connect();
+    const { firebase_uid } = req.params;
+
+    try {
+
+        const response = await client.query("SELECT * FROM users WHERE firebase_uid = $1", [firebase_uid]);
+
+        res.status(200).json(response.rows)
+
+    } catch (err) {
+
+        console.error("Error: ", err.message);
+        res.status(500).json({ error: err.message })
+
+    } finally {
+
+        client.release();
+
+    }
+})
+
 //END POINT TO CHECK USER EXIST IN USERS TABLE
 
 app.get("/users", async (req, res) => {
