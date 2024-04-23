@@ -241,6 +241,36 @@ app.get("/users/:firebase_uid", async (req, res) => {
     }
 })
 
+//ENDPOINT TO EDIT CURRENT USER DATA
+
+app.put("/users", async (req, res) => {
+    const client = await pool.connect();
+    const { username, profile_pic, email } = req.body;
+
+    try {
+
+        const response = await client.query(`
+        UPDATE users 
+        SET 
+            username = COALESCE($1, username), 
+            profile_pic = COALESCE($2, profile_pic) 
+        WHERE email = $3 
+        RETURNING *`, [username, profile_pic, email]);
+
+        res.status(200).json(response.rows)
+
+    } catch (err) {
+
+        console.error("Error: ", err.message);
+        res.status(500).json({ error: err.message });
+
+    } finally {
+
+        client.release();
+
+    }
+});
+
 //END POINT TO CHECK USER EXIST IN USERS TABLE
 
 app.get("/users", async (req, res) => {
