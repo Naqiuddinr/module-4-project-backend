@@ -79,8 +79,9 @@ app.post("/users", async (req, res) => {
   'Click Me!',
   'Thank you for signing up with Tadel and Congratulation for viewing your first task! 
                           
-  You can click anywhere outside of the box to dismiss and we suggest you to view our "User Guide" if you are a first timer.
-  We hope you enjoy using Tadel!',
+You can click anywhere outside of the box to dismiss and we suggest you to view our "User Guide" if you are a first timer.
+
+We hope you enjoy using Tadel!',
   'pending',
   null,
   CURRENT_DATE,
@@ -107,7 +108,7 @@ app.post("/users", async (req, res) => {
   'User Guide #1',
   'Now that you know how to view task, lets add a new task! 
   
-  From your dashboard, you should be able to add new task by clicking the "Add Task" button at the bottom of your screen. Go ahead and try it!',
+From your dashboard, you should be able to add new task by clicking the "Add Task" button at the bottom of your screen. Go ahead and try it!',
   'progress',
   null,
   CURRENT_DATE,
@@ -115,7 +116,7 @@ app.post("/users", async (req, res) => {
   $1,
   $1,
   '#6ba1bc',
-  null,
+  'https://firebasestorage.googleapis.com/v0/b/tadel-app.appspot.com/o/placeholder%2Fuser%20guide%201.JPG?alt=media&token=c6939ae8-cca6-48a9-9357-683c516d7dc7',
   u1.firebase_uid AS originator_id,
   u2.firebase_uid AS assignee_id
         FROM
@@ -134,7 +135,7 @@ app.post("/users", async (req, res) => {
   'User Guide #2',
   'If you notice, within this task box there are two buttons! One for Edit and another for delete. 
   
-  Go ahead and try it out!',
+Go ahead and try it out!',
   'progress',
   null,
   CURRENT_DATE,
@@ -161,7 +162,7 @@ app.post("/users", async (req, res) => {
   'User Guide #3',
   'Tadel is specifically designed for you to interact with other user. 
   
-  Head over to your profile section by clicking profile(on your top right) and add some team member!',
+Head over to your profile section by clicking profile(on your top right) and add some team member!',
   'progress',
   null,
   CURRENT_DATE,
@@ -169,7 +170,7 @@ app.post("/users", async (req, res) => {
   $1,
   $1,
   '#ff9898',
-  null,
+  'https://firebasestorage.googleapis.com/v0/b/tadel-app.appspot.com/o/placeholder%2Fuser%20guide%203.JPG?alt=media&token=981e8c61-7206-4ef1-a0a5-9a6e2e828f0b',
   u1.firebase_uid AS originator_id,
   u2.firebase_uid AS assignee_id
         FROM
@@ -188,7 +189,7 @@ app.post("/users", async (req, res) => {
   'Final Note!',
   'Great! Now that you know how to use Tadel, feel free to delete any of the existing cards and create new ones of your own!. 
   
-  Again, thank you for signing up and enjoy delegating your task away!',
+Again, thank you for signing up and enjoy delegating your task away!',
   'completed',
   null,
   CURRENT_DATE,
@@ -375,7 +376,7 @@ app.post("/team/invite", async (req, res) => {
             to: ["mnaqiuddin.rsl@gmail.com"],
             subject: "You Have Been Invited to Join Tadel!",
             html: `
-          <h4>You have been invited to join Tadel by ${originator}</h4>
+          <h4>Hello ${email}! You have been invited to join Tadel by ${originator}</h4>
           <p>Please click on this <a href="https://module-4-project-naqiuddinr.vercel.app/login">link</a> to sign up and start using Tadel!</p>
           `,
         });
