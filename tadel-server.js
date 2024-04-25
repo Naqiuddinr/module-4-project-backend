@@ -438,11 +438,11 @@ app.post("/tasks", async (req, res) => {
         SELECT
           $1,
           $2,
-          $3,
+          COALESCE($3, 'pending'),
           $4,
           $5,
           $6,
-          $7,
+          COALESCE($7, $8),
           $8,
           $9,
           $10,
